@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "outDir": "./tmp",
+    "target": "ES5",
+    "sourceMap": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "moduleResolution": "node",
+    "module": "commonjs",
+    "noLib": false
+  },
+  "files": [
+    "./typings/browser.d.ts",
+    "./src/app/boot.ts"
+  ]
+}
