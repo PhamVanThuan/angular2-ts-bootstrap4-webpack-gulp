@@ -14,8 +14,9 @@ Requirements:
 Installation:
 
 ```bash
-npm install -g gulp typescript tsd webpack
+npm install -g gulp typescript typings webpack
 npm install
+typings install
 ```
 
 To run:
