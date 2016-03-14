@@ -50,7 +50,7 @@ Bootstrap 4.0 Alpha 2
   npm uninstall tsd -g
 ```
 
-2) You should only use typings as it successor to tsd much like npm is the successor to bower.  The reason behind this is because when you install typings you get a browser version and a node version of typings.
+2) You should only use typings as it successor to tsd much like npm is the successor to bower.  As far as I can tell, the reason behind this is because when you install typings it seems you get a browser version and a node version of typings.
 
 ```bash
   npm install typings -g
