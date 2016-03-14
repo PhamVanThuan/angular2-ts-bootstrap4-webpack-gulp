@@ -1,15 +1,14 @@
 import {Component, View} from 'angular2/core';
 
-//import { MyService } from ',/services/sampleService';
-import './home.scss';
+import './about.scss';
 
 @Component({
-  selector: 'app-home-page'
+  selector: 'app-about-page'
 })
 @View({
-  template: require('./home.html')
+  template: require('./about.html')
 })
-export class AppHomePageComponent {
+export class AppAboutPageComponent {
   constructor() {
   }
 

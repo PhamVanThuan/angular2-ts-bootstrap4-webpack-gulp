@@ -1,23 +1,13 @@
 <nav class="navbar navbar-fixed-top navbar-full navbar-light bg-faded" role="navigation">
-  <a class="navbar-brand" href="#">Navbar</a>
+  <a class="navbar-brand" [routerLink]="['Home']">Bootstrap4-Navbar</a>
   <ul class="nav navbar-nav">
     <li class="nav-item active">
-      <a class="nav-link" [routerLink]="['./Home']">Home</a>
+      <a class="nav-link" [routerLink]="['Home']">Home</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#">Features</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Pricing</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">About</a>
+      <a class="nav-link" [routerLink]="['About']">About</a>
     </li>
   </ul>
-  <form class="form-inline pull-xs-right">
-    <input class="form-control" type="text" placeholder="Search">
-    <button class="btn btn-success-outline" type="submit">Search</button>
-  </form>
 </nav>
 <div class="app-body">
   <div class="container">
