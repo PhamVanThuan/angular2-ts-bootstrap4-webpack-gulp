@@ -30,9 +30,12 @@ module.exports =  {
     ],
     loaders: [
       {
+        test: /\.css$/,
+        loaders: ['raw-loader', 'postcss-loader']
+      },
+      {
         test: /\.scss$/,
-        exclude: /node_modules/,
-        loader: 'raw-loader!css-loader!sass-loader'
+        loaders: ['raw-loader', 'sass-loader']
       },
       {
         test: /\.ts$/,
@@ -43,15 +46,11 @@ module.exports =  {
         loader: 'json-loader'
       },
       {
-        test: /\.css$/,
-        loader: 'raw-loader!css-loader!postcss-loader'
-      },
-      {
         test:   /\.html/,
         loader: 'html-loader',
       }
     ],
-    noParse: [ /zone\.js\/dist\/.+/, /angular2\/bundles\/.+/ ]
+    noParse: [ /zone\.js/, /angular2\/bundles\/.+/ ]
   },
   plugins: [
     new webpack.optimize.OccurenceOrderPlugin(true)

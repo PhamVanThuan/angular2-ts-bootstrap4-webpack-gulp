@@ -2,44 +2,20 @@ import { Component} from '@angular/core';
 import { ROUTER_DIRECTIVES } from '@angular/router';
 import { Http } from '@angular/http';
 import {ViewEncapsulation} from '@angular/core';
+import {Nav} from '../nav';
 
-//console.error(require('bootstrap/scss/bootstrap.scss'));
 @Component({
   selector: 'app', // <app></app>
   directives: [
-    ...ROUTER_DIRECTIVES
+    ...ROUTER_DIRECTIVES,
+    Nav
   ],
   encapsulation: ViewEncapsulation.None,
   styles: [
-    require('bootstrap/scss/bootstrap.scss') 
+    require('../../node_modules/bootstrap/scss/bootstrap.scss'),
+    require('./app.css')
   ],
-  template: `
-  <h3 id="universal">Angular2 Universal</h3>
-  <nav>
-    <a [routerLinkActive]="['active', 'router-link-active']" [routerLink]=" ['./home'] ">Home</a>
-    <a [routerLinkActive]="['active', 'router-link-active']" [routerLink]=" ['./about'] ">About</a>
-  </nav>
-  <div class="hero-universal">
-    <div class="inner-hero">
-      <div>
-        <h3>Universal JavaScript {{ title }}!</h3>
-      </div>
-
-      Two-way binding: <input type="text" [value]="title" (input)="title = $event.target.value" autofocus>
-      <br><br>
-
-      <strong>Async data call return value:</strong>
-      <pre>{{ data | json }}</pre>
-
-      <strong>Router-outlet:</strong>
-      <main>
-        <router-outlet></router-outlet>
-      </main>
-
-      <blockquote>{{ server }}</blockquote>
-    </div>
-  </div>
-  `
+  template: require('./app.html')
 })
 export class AppComponent {
   title: string = 'ftw';

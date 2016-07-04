@@ -23,11 +23,11 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        loader: ["style", "css"]
+        loaders: ['raw-loader', 'postcss-loader']
       },
       {
         test: /\.scss$/,
-        loaders: ["style", "css", "sass"]
+        loaders: ['raw-loader', 'sass-loader']
       },
       {
           test:   /\.html/,

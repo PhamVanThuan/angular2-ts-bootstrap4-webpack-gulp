@@ -3,8 +3,8 @@ import { Component } from '@angular/core';
 @Component({
   moduleId: __filename,
   selector: 'home',
-  styleUrls: [
-    'home.style.css'
+  styles: [
+    require('./home.css')
   ],
   templateUrl: 'home.template.html'
 })
