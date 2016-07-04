@@ -1,8 +1,13 @@
 {
   "ambientDependencies": {
-    "es6-collections": "registry:dt/es6-collections#0.5.1+20160215162030",
-    "es6-promise": "registry:dt/es6-promise#0.0.0+20160221190517",
-    "jasmine": "github:DefinitelyTyped/DefinitelyTyped/jasmine/jasmine.d.ts#bc92442c075929849ec41d28ab618892ba493504",
-    "require": "registry:dt/require#2.1.20+20160215162030"
+    "body-parser": "registry:dt/body-parser#0.0.0+20160317120654",
+    "es6-shim": "registry:dt/es6-shim#0.31.2+20160317120654",
+    "express": "registry:dt/express#4.0.0+20160317120654",
+    "express-serve-static-core": "registry:dt/express-serve-static-core#0.0.0+20160322035842",
+    "mime": "registry:dt/mime#0.0.0+20160316155526",
+    "node": "registry:dt/node#4.0.0+20160412142033",
+    "serve-static": "registry:dt/serve-static#0.0.0+20160317120654",
+    "compression": "registry:dt/compression#0.0.0+20160501162003",
+    "node": "registry:dt/node#6.0.0+20160621231320"
   }
 }

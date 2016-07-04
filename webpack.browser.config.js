@@ -1,22 +1,29 @@
-var ExtractTextPlugin = require("extract-text-webpack-plugin");
 module.exports = {
-  entry: './src/app/boot.ts',
+  entry: [
+    './config/browser/boot.ts'
+  ],
   plugins: [
-    new ExtractTextPlugin('styles.css'),
   ],
   output: {
-    filename: 'bundle.js'
+    filename: 'browser.js'
   },
   resolve: {
     modulesDirectories: ['node_modules'],
-    root: './src',
     extensions: ['', '.webpack.js', '.web.js', '.ts', '.js'],
   },
   module: {
     loaders: [
       {
-        test: /\.tsx?$/,
-        loader: 'ts-loader'
+        test: /\.ts$/,
+        loaders: ['ts-loader', 'angular2-template-loader']
+      },
+      {
+        test: /\.json?$/,
+        loader: 'json-loader'
+      },
+      {
+        test: /\.css$/,
+        loader: ["style", "css"]
       },
       {
         test: /\.scss$/,

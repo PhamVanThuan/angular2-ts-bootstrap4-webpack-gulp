@@ -30,7 +30,11 @@ To run:
 This starter kit should help you get started in learning angular 2 and bootstrap 4.
 
 * Gulp tasks are seperated in the ./gulp-tasks folder
-* typings are install to /typings folder
+* typings are install to /typi
+
+    Justelite
+    Bookmark
+    (STEAM)Retention ngs folder
 * everything in the src folder gets compiled down to a file called bundle.js in the ./build directory
 * for distribution you only need the index.js and bundle.js in the ./build folder
 * the entry point for webpack is at ./src/app/boot.ts and the index entry is located at ./index.html

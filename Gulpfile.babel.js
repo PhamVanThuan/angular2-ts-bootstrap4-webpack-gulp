@@ -1,6 +1,5 @@
 var config = {
   gulp : require('gulp'),
-  connect : require('gulp-connect'),
   webpack : require('webpack-stream')
 };
 
