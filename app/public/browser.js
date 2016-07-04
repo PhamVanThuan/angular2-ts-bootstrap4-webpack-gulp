@@ -59,18 +59,11 @@
 	var router_1 = __webpack_require__(397);
 	var http_1 = __webpack_require__(366);
 	var app_1 = __webpack_require__(446);
-	var home_1 = __webpack_require__(454);
-	var about_1 = __webpack_require__(458);
-	var routes = [
-	    { path: '', component: home_1.Home },
-	    { path: 'home', component: home_1.Home },
-	    { path: 'about', component: about_1.About },
-	    { path: '**', redirectTo: 'home' }
-	];
+	var routes_1 = __webpack_require__(454);
 	core_1.enableProdMode();
 	function ngApp() {
 	    return platform_browser_dynamic_1.bootstrap(app_1.AppComponent, http_1.HTTP_PROVIDERS.concat([
-	        router_1.provideRouter(routes)
+	        router_1.provideRouter(routes_1.routes)
 	    ]));
 	}
 	document.addEventListener('DOMContentLoaded', function () {
@@ -65632,7 +65625,7 @@
 /* 450 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"navbar navbar-dark navbar-fixed-top bg-inverse\">\n  <button class=\"navbar-toggler hidden-sm-up\" type=\"button\">\n  &#9776;\n  </button>\n  <div class=\"nav navbar-nav collapse navbar-toggleable-xs\">\n    <a class=\"nav-item nav-link\" [routerLinkActive]=\"['active', 'router-link-active']\" [routerLink]=\" ['./home'] \">Home</a>\n    <a class=\"nav-item nav-link\" [routerLinkActive]=\"['active', 'router-link-active']\" [routerLink]=\" ['./about'] \">Features</a>\n  </div>\n</div>\n";
+	module.exports = "<div class=\"navbar navbar-dark navbar-fixed-top bg-inverse\">\n  <button class=\"navbar-toggler hidden-sm-up\" type=\"button\">\n  &#9776;\n  </button>\n  <div class=\"nav navbar-nav collapse navbar-toggleable-xs\">\n    <a class=\"nav-item nav-link\" [routerLinkActive]=\"['active', 'router-link-active']\" [routerLink]=\" ['./home'] \">Home</a>\n    <a class=\"nav-item nav-link\" [routerLinkActive]=\"['active', 'router-link-active']\" [routerLink]=\" ['./about'] \">About</a>\n  </div>\n</div>\n";
 
 /***/ },
 /* 451 */
@@ -65650,21 +65643,41 @@
 /* 453 */
 /***/ function(module, exports) {
 
-	module.exports = "<nav></nav>\n<main class=\"page-header\">\n  <router-outlet></router-outlet>\n</main>\n";
+	module.exports = "<nav></nav>\n<main>\n  <router-outlet></router-outlet>\n</main>\n";
 
 /***/ },
 /* 454 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	function __export(m) {
-	    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
-	}
-	__export(__webpack_require__(455));
+	var home_1 = __webpack_require__(455);
+	var about_1 = __webpack_require__(459);
+	exports.routes = [
+	    { path: '', component: home_1.Home },
+	    { path: 'home', component: home_1.Home },
+	    { path: 'about', component: about_1.About },
+	    { path: '**', redirectTo: 'home' }
+	];
+	exports.expressRoutes = [
+	    '/',
+	    '/home',
+	    '/about'
+	];
 
 
 /***/ },
 /* 455 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	function __export(m) {
+	    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
+	}
+	__export(__webpack_require__(456));
+
+
+/***/ },
+/* 456 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(__filename) {"use strict";
@@ -65686,9 +65699,9 @@
 	            moduleId: __filename,
 	            selector: 'home',
 	            styles: [
-	                __webpack_require__(456)
+	                __webpack_require__(457)
 	            ],
-	            template: __webpack_require__(457)
+	            template: __webpack_require__(458)
 	        }), 
 	        __metadata('design:paramtypes', [])
 	    ], Home);
@@ -65699,33 +65712,33 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, "/index.js"))
 
 /***/ },
-/* 456 */
-/***/ function(module, exports) {
-
-	module.exports = ".home {\n  background-color: red;\n}\n"
-
-/***/ },
 /* 457 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"home\">\n  This is the \"Home\" page\n</div>\n";
+	module.exports = "home {\n  background-color: red;\n}\n"
 
 /***/ },
 /* 458 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ function(module, exports) {
 
-	"use strict";
-	function __export(m) {
-	    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
-	}
-	__export(__webpack_require__(459));
-
+	module.exports = "<div class=\"home\">\n  This is the \"Home\" page\n</div>\n";
 
 /***/ },
 /* 459 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
+	function __export(m) {
+	    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
+	}
+	__export(__webpack_require__(460));
+
+
+/***/ },
+/* 460 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(__filename) {"use strict";
 	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
 	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
 	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -65741,8 +65754,12 @@
 	    }
 	    About = __decorate([
 	        core_1.Component({
+	            moduleId: __filename,
 	            selector: 'about',
-	            template: "\n    <div>This is the \"About\" page</div>\n  "
+	            styles: [
+	                __webpack_require__(461)
+	            ],
+	            template: __webpack_require__(462)
 	        }), 
 	        __metadata('design:paramtypes', [])
 	    ], About);
@@ -65750,6 +65767,19 @@
 	}());
 	exports.About = About;
 
+	/* WEBPACK VAR INJECTION */}.call(exports, "/index.js"))
+
+/***/ },
+/* 461 */
+/***/ function(module, exports) {
+
+	module.exports = "about {\n  background-color: green;\n}\n"
+
+/***/ },
+/* 462 */
+/***/ function(module, exports) {
+
+	module.exports = "<div>This is the \"About\" page</div>\n";
 
 /***/ }
 /******/ ]);

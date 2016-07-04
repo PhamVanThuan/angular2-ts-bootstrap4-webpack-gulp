@@ -24,21 +24,13 @@ import { APP_BASE_HREF } from '@angular/common';
 // Application
 import {AppComponent} from '../../components/app';
 import { RouterConfig } from '@angular/router';
-import {Home} from '../../components/home';
-import {About} from '../../components/about';
-
-const routes: RouterConfig = [
-  { path: '', component: Home },
-  { path: 'home', component: Home },
-  { path: 'about', component: About },
-  { path: '**', redirectTo: 'home' }
-];
+import {routes, expressRoutes} from '../routes'
 
 // enable prod for faster renders
 enableProdMode();
 
 const app = express();
-const ROOT = path.join(path.resolve(__dirname, '..', '..'));
+const ROOT = path.join(path.resolve(__dirname, '..', '..', 'app', 'public'));
 
 // Express View
 app.engine('.html', expressEngine);
@@ -78,10 +70,12 @@ function ngApp(req, res) {
 
   res.render('index', config);
 }
-// Routes with html5pushstate
-app.use('/', ngApp);
-app.use('/about', ngApp);
-app.use('/home', ngApp);
+
+for (var eachRoute in expressRoutes) {
+  if (routes.hasOwnProperty(eachRoute)) {
+    app.use(expressRoutes[eachRoute], ngApp);
+  }
+}
 
 // use indexFile over ngApp only when there is too much load on the server
 function indexFile(req, res) {

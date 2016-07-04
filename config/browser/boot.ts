@@ -15,16 +15,7 @@ import { HTTP_PROVIDERS } from '@angular/http';
 // Application
 import {AppComponent} from '../../components/app';
 
-import { RouterConfig } from '@angular/router';
-import {Home} from '../../components/home';
-import {About} from '../../components/about';
-
-const routes: RouterConfig = [
-  { path: '', component: Home },
-  { path: 'home', component: Home },
-  { path: 'about', component: About },
-  { path: '**', redirectTo: 'home' }
-]
+import {routes} from '../routes'
 
 // enable prod for faster renders
 enableProdMode();

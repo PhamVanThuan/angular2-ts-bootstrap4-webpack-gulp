@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styles: [
     require('./home.css')
   ],
-  templateUrl: 'home.template.html'
+  templateUrl: 'home.html'
 })
 export class Home {
 }
