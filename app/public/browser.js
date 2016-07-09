@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "9f31baade32d6c456c2b"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "69f61e51726d7493a5c3"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -61444,7 +61444,7 @@
 /* 409 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"home\">\n  This is the \"Home\" pagess\n</div>\n";
+	module.exports = "<div class=\"home\">\n  This is the \"Home\" page\n</div>\n";
 
 /***/ },
 /* 410 */
@@ -65736,17 +65736,18 @@
 	var http_1 = __webpack_require__(89);
 	var app_1 = __webpack_require__(461);
 	var routes_1 = __webpack_require__(467);
-	core_1.enableProdMode();
 	function ngApp() {
 	    return platform_browser_dynamic_1.bootstrap(app_1.AppComponent, http_1.HTTP_PROVIDERS.concat([
 	        router_1.provideRouter(routes_1.routes)
 	    ]));
 	}
-	if (1) {
+	var developmentMode = true;
+	if (developmentMode) {
 	    var ngHmr = __webpack_require__(381);
 	    ngHmr.hotModuleReplacement(ngApp, module);
 	}
 	else {
+	    core_1.enableProdMode();
 	    document.addEventListener('DOMContentLoaded', function () {
 	        ngApp()
 	            .then(angular2_universal_1.prebootComplete);

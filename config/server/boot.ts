@@ -4,7 +4,6 @@ import 'angular2-universal/polyfills';
 import * as path from 'path';
 import * as express from 'express';
 import * as bodyParser from 'body-parser';
-
 // Angular 2
 import { enableProdMode } from '@angular/core';
 // Angular 2 Universal
@@ -46,7 +45,7 @@ app.use(require("webpack-dev-middleware")(compiler, {
     publicPath: webpackConfig.output.publicPath
 }));
 
-app.use(require("webpack-hot-middleware")(compiler));
+app.use(require('webpack-hot-middleware')(compiler));
 
 app.use(bodyParser.json());
 

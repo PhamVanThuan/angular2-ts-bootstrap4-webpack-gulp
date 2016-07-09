@@ -25,7 +25,7 @@ module.exports =  {
       { test: /\.js$/, loader: 'source-map-loader', exclude: [
         // these packages have problems with their sourcemaps
         root('node_modules/rxjs'),
-        root('node_modules/@angular'),
+        root('node_modules/@angular')
       ]}
     ],
     loaders: [
@@ -50,11 +50,10 @@ module.exports =  {
         loader: 'html-loader',
       }
     ],
-    noParse: [ /zone\.js/, /angular2\/bundles\/.+/, /webpack-hot-middleware/ ]
+    noParse: [ /zone\.js/, /angular2\/bundles\/.+/ ]
   },
   target: 'node',
   entry: [
-    //'webpack-hot-middleware/client',
     './config/server/boot.ts'
   ],
   output: {
@@ -66,6 +65,8 @@ module.exports =  {
   externals: checkNodeImport,
   node: {
     global: true,
+    setInterval: true,
+    unref: true,
     __dirname: true,
     __filename: true,
     process: true,
@@ -73,7 +74,5 @@ module.exports =  {
   },
   plugins: [
     new webpack.optimize.OccurenceOrderPlugin(true),
-    new webpack.HotModuleReplacementPlugin(),
-    //new webpack.NoErrorsPlugin()
   ]
 };
