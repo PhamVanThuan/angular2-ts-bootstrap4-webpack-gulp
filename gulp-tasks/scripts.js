@@ -1,14 +1,18 @@
-module.exports = function(config){
-  config.gulp.task('scripts:browser', function() {
-  	return config.gulp.src('./config/browser/boot.ts')
-      .pipe(config.webpack(require('../webpack.browser.config.js')))
-      .pipe(config.gulp.dest('./app/public'))
-    ;
+var webpack = require('gulp-webpack');
+var WebpackDevServer = require("webpack-dev-server");
+
+module.exports = function(gulp){
+  gulp.task('scripts:browser', function() {
+    return gulp.src(['webpack-hot-middleware/client','./config/browser/boot.ts'])
+    //return gulp.src('./config/browser/boot.ts')
+      .pipe(webpack( require('../webpack.browser.config.js') ))
+      .pipe(gulp.dest('./app/public'));
   });
-  config.gulp.task('scripts:server', function() {
-  	return config.gulp.src('./config/server/boot.ts')
-      .pipe(config.webpack(require('../webpack.server.config.js')))
-      .pipe(config.gulp.dest('./app'))
+  gulp.task('scripts:server', function() {
+    //return gulp.src(['webpack-hot-middleware/client','./config/server/boot.ts'])
+    return gulp.src('./config/server/boot.ts')
+      .pipe(webpack(require('../webpack.server.config.js')))
+      .pipe(gulp.dest('./app'))
     ;
   });
 };

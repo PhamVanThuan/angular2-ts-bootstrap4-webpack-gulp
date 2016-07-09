@@ -1,5 +1,5 @@
-module.exports = function(config){
-  config.gulp.task('list', function() {
+module.exports = function(gulp){
+  gulp.task('list', function() {
     console.log('*********************');
     console.log('*** user commands ***');
     console.log('*********************');

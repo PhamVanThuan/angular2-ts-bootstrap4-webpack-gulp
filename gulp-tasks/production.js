@@ -1,4 +1,4 @@
-module.exports = function(config){
-  config.gulp.task('live', ['production']);
-  config.gulp.task('production', ['connect-live']);
+module.exports = function(gulp){
+  gulp.task('live', ['production']);
+  gulp.task('production', ['connect-live']);
 };

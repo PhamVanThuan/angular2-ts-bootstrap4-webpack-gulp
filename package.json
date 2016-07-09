@@ -34,6 +34,7 @@
     "express": "^4.13.4",
     "fake-style-loader": "^1.0.1",
     "gulp-nodemon": "^2.1.0",
+    "gulp-webpack": "^1.5.0",
     "html-loader": "^0.4.3",
     "isomorphic-style-loader": "^1.0.0",
     "lodash": "^4.13.1",
@@ -53,8 +54,7 @@
     "typescript": "^1.8.9",
     "typings": "~1.0.5",
     "webpack": "^1.13.1",
-    "webpack-dev-server": "^1.14.0",
-    "webpack-merge": "^0.13.0",
-    "webpack-stream": "^3.2.0"
+    "webpack-dev-middleware": "^1.6.1",
+    "webpack-hot-middleware": "^2.12.1"
   }
 }

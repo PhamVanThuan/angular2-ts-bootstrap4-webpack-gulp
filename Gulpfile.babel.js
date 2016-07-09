@@ -1,9 +1,6 @@
-var config = {
-  gulp : require('gulp'),
-  webpack : require('webpack-stream')
-};
+const gulp = require('gulp');
 
 var allGulpTasks = require('require-all')(__dirname + '/gulp-tasks');
 for (var task in allGulpTasks) {
-  allGulpTasks[task](config);
+  allGulpTasks[task](gulp);
 }

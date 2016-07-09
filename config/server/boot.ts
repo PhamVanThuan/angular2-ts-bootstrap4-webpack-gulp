@@ -37,6 +37,17 @@ app.engine('.html', expressEngine);
 app.set('views', __dirname);
 app.set('view engine', 'html');
 
+var webpack = require('webpack');
+var webpackConfig = require('../../webpack.browser.config.js');
+var compiler = webpack(webpackConfig);
+
+app.use(require("webpack-dev-middleware")(compiler, {
+    noInfo: true,
+    publicPath: webpackConfig.output.publicPath
+}));
+
+app.use(require("webpack-hot-middleware")(compiler));
+
 app.use(bodyParser.json());
 
 // Serve static files

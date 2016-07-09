@@ -1,5 +1,5 @@
-module.exports = function(config){
-  config.gulp.task('test', function() {
+module.exports = function(gulp){
+  gulp.task('test', function() {
 
   });
 };

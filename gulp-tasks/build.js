@@ -1,3 +1,3 @@
-module.exports = function(config){
-  config.gulp.task('build', ['scripts:browser', 'scripts:server']);
+module.exports = function(gulp){
+  gulp.task('build', ['scripts:browser', 'scripts:server']);
 };

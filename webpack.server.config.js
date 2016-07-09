@@ -52,14 +52,14 @@ module.exports =  {
     ],
     noParse: [ /zone\.js/, /angular2\/bundles\/.+/ ]
   },
-  plugins: [
-    new webpack.optimize.OccurenceOrderPlugin(true)
-  ],
   target: 'node',
   entry: [
+    //'webpack-hot-middleware/client',
     './config/server/boot.ts'
   ],
   output: {
+    path: __dirname,
+    publicPath: '/',
     filename: 'server.js',
     libraryTarget: 'commonjs2'
   },
@@ -70,5 +70,9 @@ module.exports =  {
     __filename: true,
     process: true,
     Buffer: true
-  }
+  },
+  plugins: [
+    new webpack.optimize.OccurenceOrderPlugin(true),
+    //new webpack.HotModuleReplacementPlugin()
+  ]
 };
