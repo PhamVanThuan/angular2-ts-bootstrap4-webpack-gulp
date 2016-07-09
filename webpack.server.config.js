@@ -50,7 +50,7 @@ module.exports =  {
         loader: 'html-loader',
       }
     ],
-    noParse: [ /zone\.js/, /angular2\/bundles\/.+/ ]
+    noParse: [ /zone\.js/, /angular2\/bundles\/.+/, /webpack-hot-middleware/ ]
   },
   target: 'node',
   entry: [
@@ -58,7 +58,7 @@ module.exports =  {
     './config/server/boot.ts'
   ],
   output: {
-    path: __dirname,
+    path: require("path").resolve("./build/js"),
     publicPath: '/',
     filename: 'server.js',
     libraryTarget: 'commonjs2'
@@ -73,6 +73,7 @@ module.exports =  {
   },
   plugins: [
     new webpack.optimize.OccurenceOrderPlugin(true),
-    //new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
+    //new webpack.NoErrorsPlugin()
   ]
 };

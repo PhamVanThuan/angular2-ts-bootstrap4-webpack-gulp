@@ -17,8 +17,6 @@ import {AppComponent} from '../../components/app';
 
 import {routes} from '../routes'
 
-// enable prod for faster renders
-enableProdMode();
 
 // you must return bootstrap for client.ts
 function ngApp() {
@@ -28,11 +26,21 @@ function ngApp() {
   ]);
 }
 
+var developmentMode = true;
 
-// on document ready bootstrap Angular 2
-document.addEventListener('DOMContentLoaded', () => {
+if (developmentMode) {
+  // activate hot module reload
+  let ngHmr = require('angular2-hmr');
+  ngHmr.hotModuleReplacement(ngApp, module); // pass the main function
+  //prebootComplete;
+} else {
+  // enable prod for faster renders
+  enableProdMode();
+  // bootstrap when document is ready
+  document.addEventListener('DOMContentLoaded', () => {
 
-  ngApp()
+    ngApp()
     .then(prebootComplete);
 
-});
+  });
+}

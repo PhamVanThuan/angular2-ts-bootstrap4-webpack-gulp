@@ -6,7 +6,7 @@ module.exports = {
     './config/browser/boot.ts'
   ],
   output: {
-    path: __dirname,
+    path: require("path").resolve("./build/js"),
     publicPath: '/',
     filename: 'browser.js'
   },
@@ -42,6 +42,6 @@ module.exports = {
   plugins: [
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin()
+    //new webpack.NoErrorsPlugin()
   ]
 };
