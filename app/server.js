@@ -94,7 +94,7 @@ module.exports =
 /* 8 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"home\">\n  This is the \"Home\" page\n</div>\n";
+	module.exports = "<div class=\"home\">\n  This is the \"Home\" pages\n</div>\n";
 
 /***/ },
 /* 9 */
@@ -150,7 +150,7 @@ module.exports =
 	    loaders: [
 	      {
 	        test: /\.ts$/,
-	        loaders: ['ts-loader', 'angular2-template-loader']
+	        loaders: ['ts-loader?configFileName=tsconfig.browser.json', 'angular2-template-loader']
 	      },
 	      {
 	        test: /\.json?$/,
@@ -412,6 +412,7 @@ module.exports =
 	var common_1 = __webpack_require__(25);
 	var app_1 = __webpack_require__(18);
 	var routes_1 = __webpack_require__(23);
+	var webpackHotMiddleware = __webpack_require__(31);
 	core_1.enableProdMode();
 	var app = express();
 	var ROOT = path.join(path.resolve(__dirname, '..', '..', 'app', 'public'));
@@ -425,7 +426,7 @@ module.exports =
 	    noInfo: true,
 	    publicPath: webpackConfig.output.publicPath
 	}));
-	app.use(__webpack_require__(31)(compiler));
+	app.use(webpackHotMiddleware(compiler));
 	app.use(bodyParser.json());
 	app.use(express.static(ROOT, { index: false }));
 	function ngApp(req, res) {

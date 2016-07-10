@@ -3,14 +3,13 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "target": "es5",
-    "moduleResolution": "node",
     "module": "commonjs",
     "removeComments": true,
     "sourceMap": true
   },
   "exclude": [
-    "typings/browser.d.ts",
-    "typings/browser",
+    "typings/main.d.ts",
+    "typings/main",
     "node_modules"
   ],
   "compileOnSave": false,

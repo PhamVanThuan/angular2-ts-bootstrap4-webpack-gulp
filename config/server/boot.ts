@@ -24,6 +24,7 @@ import { APP_BASE_HREF } from '@angular/common';
 import {AppComponent} from '../../components/app';
 import { RouterConfig } from '@angular/router';
 import {routes, expressRoutes} from '../routes'
+import * as webpackHotMiddleware from 'webpack-hot-middleware';
 
 // enable prod for faster renders
 enableProdMode();
@@ -45,7 +46,10 @@ app.use(require("webpack-dev-middleware")(compiler, {
     publicPath: webpackConfig.output.publicPath
 }));
 
-app.use(require('webpack-hot-middleware')(compiler));
+//const whm = require('webpack-hot-middleware');
+
+//app.use(whm(compiler));
+app.use(webpackHotMiddleware(compiler));
 
 app.use(bodyParser.json());
 

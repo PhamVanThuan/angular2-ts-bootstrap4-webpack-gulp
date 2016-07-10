@@ -39,7 +39,7 @@ module.exports =  {
       },
       {
         test: /\.ts$/,
-        loaders: ['ts-loader', 'angular2-template-loader']
+        loaders: ['ts-loader?configFileName=tsconfig.json', 'angular2-template-loader']
       },
       {
         test: /\.json?$/,
@@ -65,14 +65,12 @@ module.exports =  {
   externals: checkNodeImport,
   node: {
     global: true,
-    setInterval: true,
-    unref: true,
     __dirname: true,
     __filename: true,
     process: true,
     Buffer: true
   },
   plugins: [
-    new webpack.optimize.OccurenceOrderPlugin(true),
+    new webpack.optimize.OccurenceOrderPlugin(true)
   ]
 };

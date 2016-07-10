@@ -18,7 +18,7 @@ module.exports = {
     loaders: [
       {
         test: /\.ts$/,
-        loaders: ['ts-loader', 'angular2-template-loader']
+        loaders: ['ts-loader?configFileName=tsconfig.browser.json', 'angular2-template-loader']
       },
       {
         test: /\.json?$/,
