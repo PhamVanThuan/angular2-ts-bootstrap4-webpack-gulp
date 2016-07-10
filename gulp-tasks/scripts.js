@@ -1,5 +1,4 @@
 var webpack = require('gulp-webpack');
-var WebpackDevServer = require("webpack-dev-server");
 
 module.exports = function(gulp){
   gulp.task('scripts:browser', function() {

@@ -412,7 +412,6 @@ module.exports =
 	var common_1 = __webpack_require__(25);
 	var app_1 = __webpack_require__(18);
 	var routes_1 = __webpack_require__(23);
-	var webpackHotMiddleware = __webpack_require__(31);
 	core_1.enableProdMode();
 	var app = express();
 	var ROOT = path.join(path.resolve(__dirname, '..', '..', 'app', 'public'));
@@ -426,7 +425,7 @@ module.exports =
 	    noInfo: true,
 	    publicPath: webpackConfig.output.publicPath
 	}));
-	app.use(webpackHotMiddleware(compiler));
+	app.use(__webpack_require__(31)(compiler));
 	app.use(bodyParser.json());
 	app.use(express.static(ROOT, { index: false }));
 	function ngApp(req, res) {
