@@ -32,9 +32,10 @@ This starter kit should help you get started in learning angular 2 and bootstrap
 * Gulp tasks are seperated in the ./gulp-tasks folder
 * typings are install to /typings
 * Server side rendering
-* everything in the src folder gets compiled down to a file called bundle.js in the ./build directory
-* for distribution you only need the index.js and bundle.js in the ./build folder
-* the entry point for webpack is at ./src/app/boot.ts and the index entry is located at ./index.html
+* Webpack hot-reload
+* Server side entry point for express is config/server/boot.ts
+* Client/Browser side entry point for express is config/browser/boot.ts
+* Add routes in config/routes.ts
 
 ###Current Version bootstrap and angular 2 installed
 

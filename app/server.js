@@ -94,7 +94,7 @@ module.exports =
 /* 8 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"home\">\n  This is the \"Home\" pages\n</div>\n";
+	module.exports = "<div class=\"home\">\n  This is the \"Home\" page\n</div>\n";
 
 /***/ },
 /* 9 */

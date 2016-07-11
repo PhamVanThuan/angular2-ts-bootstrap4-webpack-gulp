@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "081fbc1b0d7e6e9571db"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "ce4fe6372220151087cd"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -61242,7 +61242,7 @@
 /* 411 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"home\">\n  This is the \"Home\" pages\n</div>\n";
+	module.exports = "<div class=\"home\">\n  This is the \"Home\" page\n</div>\n";
 
 /***/ },
 /* 412 */
