@@ -12,7 +12,7 @@ import {Nav} from '../nav';
   ],
   encapsulation: ViewEncapsulation.None,
   styles: [
-    require('../../node_modules/bootstrap/scss/bootstrap.scss'),
+    require('../../../node_modules/bootstrap/scss/bootstrap.scss'),
     require('./app.css')
   ],
   template: require('./app.html')

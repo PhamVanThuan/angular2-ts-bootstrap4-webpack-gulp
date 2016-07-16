@@ -1,5 +1,10 @@
 // the polyfills must be the first thing imported in node.js
-import 'angular2-universal/polyfills';
+import 'es6-promise';
+import 'es6-shim';
+// typescript emit metadata
+import 'reflect-metadata';
+// zone.js to track promises
+import 'zone.js/dist/zone-node';
 
 import * as path from 'path';
 import * as express from 'express';
@@ -21,9 +26,9 @@ import { provideRouter } from '@angular/router';
 import { APP_BASE_HREF } from '@angular/common';
 
 // Application
-import {AppComponent} from '../../components/app';
+import {AppComponent} from '../../app/components/app';
 import { RouterConfig } from '@angular/router';
-import {routes, expressRoutes} from '../routes'
+import {routes, expressRoutes} from '../../app/routes'
 
 // enable prod for faster renders
 enableProdMode();
@@ -37,7 +42,7 @@ app.set('views', __dirname);
 app.set('view engine', 'html');
 
 var webpack = require('webpack');
-var webpackConfig = require('../../webpack.browser.config.js');
+var webpackConfig = require('../webpack/browser.js');
 var compiler = webpack(webpackConfig);
 
 app.use(require("webpack-dev-middleware")(compiler, {

@@ -19,3 +19,5 @@ app.use(express.static(__dirname + '/build'));
 
 app.listen(process.env.PORT || 80);
 /* jshint ignore:end */
+//"webpack-hot-middleware": "git+https://github.com/thomasmeadows/webpack-hot-middleware.git",
+//"zone.js": "https://github.com/angular/zone.js.git#master"

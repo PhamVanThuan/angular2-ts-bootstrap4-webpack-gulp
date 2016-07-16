@@ -15,6 +15,15 @@ function root(args) {
 }
 
 module.exports =  {
+  entry: [
+    './internal-config/server-entry/server-entry.ts'
+  ],
+  output: {
+    path: require("path").resolve("./build/js"),
+    publicPath: '/',
+    filename: 'server.js',
+    libraryTarget: 'commonjs2'
+  },
   resolve: {
     modulesDirectories: ['node_modules'],
     extensions: ['', '.ts', '.js']
@@ -28,40 +37,10 @@ module.exports =  {
         root('node_modules/@angular')
       ]}
     ],
-    loaders: [
-      {
-        test: /\.css$/,
-        loaders: ['raw-loader', 'postcss-loader']
-      },
-      {
-        test: /\.scss$/,
-        loaders: ['raw-loader', 'sass-loader']
-      },
-      {
-        test: /\.ts$/,
-        loaders: ['ts-loader?configFileName=tsconfig.json', 'angular2-template-loader']
-      },
-      {
-        test: /\.json?$/,
-        loader: 'json-loader'
-      },
-      {
-        test:   /\.html/,
-        loader: 'html-loader',
-      }
-    ],
+    loaders: require('./config/loaders.js'),
     noParse: [ /zone\.js/, /angular2\/bundles\/.+/ ]
   },
   target: 'node',
-  entry: [
-    './config/server/boot.ts'
-  ],
-  output: {
-    path: require("path").resolve("./build/js"),
-    publicPath: '/',
-    filename: 'server.js',
-    libraryTarget: 'commonjs2'
-  },
   externals: checkNodeImport,
   node: {
     global: true,

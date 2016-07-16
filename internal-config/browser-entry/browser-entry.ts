@@ -13,9 +13,9 @@ import { provideRouter } from '@angular/router';
 import { HTTP_PROVIDERS } from '@angular/http';
 
 // Application
-import {AppComponent} from '../../components/app';
+import {AppComponent} from '../../app/components/app';
 
-import {routes} from '../routes'
+import {routes} from '../../app/routes'
 
 
 // you must return bootstrap for client.ts

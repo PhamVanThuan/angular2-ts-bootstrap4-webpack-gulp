@@ -1,6 +1,8 @@
+//include all your routes in this config file
+//you will need to import components the rote starts at
 import { RouterConfig } from '@angular/router';
-import {Home} from '../components/home';
-import {About} from '../components/about';
+import {Home} from './components/home';
+import {About} from './components/about';
 
 export const routes: RouterConfig = [
   { path: '', component: Home },
@@ -9,7 +11,7 @@ export const routes: RouterConfig = [
   { path: '**', redirectTo: 'home' }
 ]
 
-export const expressRoutes = [
+export const expressRoutes: any = [
   '/',
   '/home',
   '/about'
