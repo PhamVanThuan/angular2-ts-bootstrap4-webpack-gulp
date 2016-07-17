@@ -1,0 +1,5 @@
+<%= declared %>
+
+interface GlobalEnvironment {
+<%= globals %>
+}

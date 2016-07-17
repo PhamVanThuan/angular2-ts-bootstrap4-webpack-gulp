@@ -1,9 +1,9 @@
 import nodemon from 'gulp-nodemon';
 
 module.exports = function(gulp){
-  gulp.task('server', function () {
+  gulp.task('internal-server', function () {
     nodemon({
-      script: './app/server.js',
+      script: './dev/server.js',
       //ext: 'js html',
       //env: { 'NODE_ENV': 'development' }
     });

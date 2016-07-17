@@ -3,7 +3,7 @@ var webpack = require('webpack');
 module.exports = {
   entry: [
     'webpack-hot-middleware/client',
-    './internal-config/browser-entry/browser-entry.ts'
+    './config/browser-entry/browser-entry.ts'
   ],
   output: {
     path: require("path").resolve("./build/js"),

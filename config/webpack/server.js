@@ -16,7 +16,7 @@ function root(args) {
 
 module.exports =  {
   entry: [
-    './internal-config/server-entry/server-entry.ts'
+    './config/server-entry/server-entry.ts'
   ],
   output: {
     path: require("path").resolve("./build/js"),

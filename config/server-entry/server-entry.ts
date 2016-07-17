@@ -41,19 +41,18 @@ app.engine('.html', expressEngine);
 app.set('views', __dirname);
 app.set('view engine', 'html');
 
-var webpack = require('webpack');
-var webpackConfig = require('../webpack/browser.js');
-var compiler = webpack(webpackConfig);
+if(DEBUG){
+  var webpack = require('webpack');
+  var webpackConfig = require('../webpack/browser.js');
+  var compiler = webpack(webpackConfig);
+  app.use(require("webpack-dev-middleware")(compiler, {
+      noInfo: true,
+      publicPath: webpackConfig.output.publicPath
+  }));
 
-app.use(require("webpack-dev-middleware")(compiler, {
-    noInfo: true,
-    publicPath: webpackConfig.output.publicPath
-}));
+  app.use(require("webpack-hot-middleware")(compiler));
+}
 
-//const whm = require('webpack-hot-middleware');
-
-//app.use(whm(compiler));
-app.use(require("webpack-hot-middleware")(compiler));
 
 app.use(bodyParser.json());
 
@@ -101,8 +100,7 @@ function indexFile(req, res) {
   // the index.html without prerendering for client-only
   res.sendFile('/index.html', {root: __dirname});
 }
-
 // Server
-app.listen(3000, () => {
+app.listen(PORT || 80, () => {
   console.log('Listening on: http://localhost:3000');
 });

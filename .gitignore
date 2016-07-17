@@ -117,3 +117,5 @@ nbproject
 .idea
 .node_history
 typings
+dev
+config/custom-typings.d.ts
