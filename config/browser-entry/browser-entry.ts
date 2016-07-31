@@ -26,9 +26,7 @@ function ngApp() {
   ]);
 }
 
-var developmentMode = true;
-
-if (developmentMode) {
+if (DEBUG) {
   // activate hot module reload
   let ngHmr = require('angular2-hmr');
   ngHmr.hotModuleReplacement(ngApp, module); // pass the main function

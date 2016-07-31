@@ -34,7 +34,7 @@ import {routes, expressRoutes} from '../../app/routes'
 enableProdMode();
 
 const app = express();
-const ROOT = path.join(path.resolve(__dirname, '..', '..', 'app', 'public'));
+const ROOT = path.join(path.resolve(__dirname, '..', '..', BUILDFOLDER, 'public'));
 
 // Express View
 app.engine('.html', expressEngine);
@@ -44,6 +44,9 @@ app.set('view engine', 'html');
 if(DEBUG){
   var webpack = require('webpack');
   var webpackConfig = require('../webpack/browser.js');
+  webpackConfig.plugins.push(new webpack.DefinePlugin(ALLGLOBALS));
+  webpackConfig.plugins = [new webpack.HotModuleReplacementPlugin()].concat(webpackConfig.plugins);
+  webpackConfig.entry = ['webpack-hot-middleware/client'].concat(webpackConfig.entry);
   var compiler = webpack(webpackConfig);
   app.use(require("webpack-dev-middleware")(compiler, {
       noInfo: true,
@@ -102,5 +105,5 @@ function indexFile(req, res) {
 }
 // Server
 app.listen(PORT || 80, () => {
-  console.log('Listening on: http://localhost:3000');
+  console.log('Listening on: ' + SITE + ':' + PORT || 80);
 });

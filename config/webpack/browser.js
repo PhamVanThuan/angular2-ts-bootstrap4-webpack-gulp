@@ -2,11 +2,10 @@ var webpack = require('webpack');
 
 module.exports = {
   entry: [
-    'webpack-hot-middleware/client',
     './config/browser-entry/browser-entry.ts'
   ],
   output: {
-    path: require("path").resolve("./build/js"),
+    path: '/',
     publicPath: '/',
     filename: 'browser.js'
   },
@@ -19,7 +18,6 @@ module.exports = {
     noParse: [ /zone\.js\/dist\/.+/, /angular2\/bundles\/.+/ ]
   },
   plugins: [
-    new webpack.optimize.OccurenceOrderPlugin(),
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.optimize.OccurenceOrderPlugin()
   ]
 };

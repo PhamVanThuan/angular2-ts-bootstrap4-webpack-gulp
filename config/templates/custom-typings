@@ -1,5 +1,7 @@
+declare const ALLGLOBALS: any;
 <%= declared %>
 
 interface GlobalEnvironment {
+  ALLGLOBALS;
 <%= globals %>
 }

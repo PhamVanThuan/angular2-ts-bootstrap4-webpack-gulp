@@ -1,15 +1,22 @@
-// variables will be included in the define plugin of webpack
-// and will become available globally for use in your components
+/*
+  Note all globals are passed to webpack
+  define plugin and MUST be a STRING.
+  What is inside this string will be
+  replaced presciley on compile.
+  see:
+    https://github.com/webpack/docs/wiki/list-of-plugins#defineplugin
+*/
 module.exports = {
   environments: [
     {
       name: 'development environment',
       globals: {
-        ENVIRONMENT: 'development',
-        API: 'localhost:1337',
-        SITE: 'example.com',
-        PORT: 9000,
-        DEBUG: true
+        ENVIRONMENT: '"development"',
+        BUILDFOLDER: '"dev"',
+        API: '"localhost:1337"',
+        SITE: '"localhost"',
+        PORT: '8000',
+        DEBUG: 'true'
       },
       gulpTaskAlias: [
         'development',
@@ -21,11 +28,12 @@ module.exports = {
     {
       name: 'staging environment',
       globals: {
-        ENVIRONMENT: 'staging',
-        API: 'testserver.example.com/api',
-        SITE: 'example.com',
-        PORT: 9000,
-        DEBUG: true
+        ENVIRONMENT: '"staging"',
+        BUILDFOLDER: '"dev"',
+        API: '"staging.example.com/api"',
+        SITE: '"example.com"',
+        PORT: '8000',
+        DEBUG: 'true'
       },
       gulpTaskAlias: [
         'staging',
@@ -36,11 +44,12 @@ module.exports = {
     {
       name: 'production environment',
       globals: {
-        ENVIRONMENT: 'production',
-        API: 'example.com/api',
-        SITE: 'example.com',
-        PORT: 9000,
-        DEBUG: false
+        ENVIRONMENT: '"production"',
+        BUILDFOLDER: '"dev"',
+        API: '"example.com/api"',
+        SITE: '"example.com"',
+        PORT: '8000',
+        DEBUG: 'true'
       },
       gulpTaskAlias: [
         'production',

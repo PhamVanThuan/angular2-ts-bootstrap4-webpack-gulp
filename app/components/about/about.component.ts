@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styles: [
     require('./about.css')
   ],
-  templateUrl: 'about.html'
+  template: require('./about.html')
 })
 export class About {
 }
